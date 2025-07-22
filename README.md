@@ -104,6 +104,7 @@ We welcome contributions! Please open an issue or submit PRs for:
 - ~~New SMAC scenarios~~
 - Alternative policy coordination mechanisms
 - Performance optimizations
+This project is forked from [ReinholdM/Offline-Pre-trained-Multi-Agent-Decision-Transformer](https://github.com/ReinholdM/Offline-Pre-trained-Multi-Agent-Decision-Transformer), many thanks to their wonderful foundational research work.
 
 ## 📜 Citation
 If you use this work, please cite:
