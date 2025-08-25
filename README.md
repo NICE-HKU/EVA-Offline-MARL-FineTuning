@@ -113,6 +113,6 @@ If you use this work, please cite:
 @article{jin2025eva-marl,
   title={EVA-MARL: Evolutionary Variational Autoencoder-enhanced MetaFormer Actor with Dual-Experts Policy Coordination for Efficient Offline-to-Online MARL},
   author={Jin, Weiqiang and Du, Hongyang et al.},
-  journal={IEEE Transactions on Industrial Informatics (under review)},
+  journal={IEEE Transactions on Neural Networks and Learning Systems (under review)},
   year={2025},
 }
