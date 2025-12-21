@@ -59,6 +59,14 @@ pip install -r requirements.txt
 bash install_sc2.sh
 ```
 
+## 🌏 SMAC Environment Testbeds
+
+The selected SMAC maps with progressive difficulty levels, ranging from Easy, Hard to Super-Hard, for evaluating offline MARL algorithms.
+
+<p align="center">
+  <img src="./source/EVA-MARL-partSMACMAPs.png" width="450" alt="EVA-MARL part of SMACMAPs">
+</p>
+
 ## 🏃 Quick Start
 
 Run offline pre-training + online fine-tuning (offline-to-online) on 3s5z map:
@@ -83,13 +91,13 @@ python run_madt_sc2.py --map_name 3s5z --cuda_id 0
 - Online fine-tuning win-rates between EVA-MARL and baselines across SMACmaps
 ---
 <p align="center">
-  <img src="./source/EVA-MARL-ftWR.png" width="600" alt="EVA-MARL Performance">
+  <img src="./source/EVA-MARL-ftWR.png" width="600" alt="EVA-MARL Win-Rate Performance">
 </p>
 
 - Effect of KL Divergence Constraint Weight (Effect of Different KL Divergence Constraint Weight (γ) Settings on EVA MARL Performance Across Different Maps.)
 ---
 <p align="center">
-  <img src="./source/KLDivergenceC.png" width="800" alt="EVA-MARL Performance">
+  <img src="./source/KLDivergenceC.png" width="800" alt="EVA-MARL KL Divergence Performance">
 </p>
 
 - Performance comparison between group-level and agent-level policy coordination of EVA-MARL
