@@ -97,7 +97,7 @@ python run_madt_sc2.py --map_name 3s5z --cuda_id 0
 - Effect of KL Divergence Constraint Weight (Effect of Different KL Divergence Constraint Weight (γ) Settings on EVA MARL Performance Across Different Maps.)
 ---
 <p align="center">
-  <img src="./source/KLDivergenceC.png" width="800" alt="EVA-MARL KL Divergence Performance">
+  <img src="./source/KLDivergenceC.png" width="550" alt="EVA-MARL KL Divergence Performance">
 </p>
 
 - Performance comparison between group-level and agent-level policy coordination of EVA-MARL
