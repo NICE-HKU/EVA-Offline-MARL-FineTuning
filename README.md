@@ -74,10 +74,22 @@ python run_madt_sc2.py --map_name 3s5z --cuda_id 0
   <img src="./source/EVA-MARL-performance.png" width="800" alt="EVA-MARL Performance">
 </p>
 
-- Offline Comparisons Between Baselines and EVA-MARL
+- Offline training performance comparison between theEVAFormer actor module of our EVA-MARL and SOTA baselines
 ---
 <p align="center">
   <img src="./source/EVA-MARL-offline-performance.png" width="800" alt="EVA-MARL Offline Performance">
+</p>
+
+- Online fine-tuning win-rates between EVA-MARL and baselines across SMACmaps
+---
+<p align="center">
+  <img src="./source/EVA-MARL-ftWR.png" width="600" alt="EVA-MARL Performance">
+</p>
+
+- Effect of KL Divergence Constraint Weight (Effect of Different KL Divergence Constraint Weight (γ) Settings on EVA MARL Performance Across Different Maps.)
+---
+<p align="center">
+  <img src="./source/KLDivergenceC.png" width="800" alt="EVA-MARL Performance">
 </p>
 
 - Performance comparison between group-level and agent-level policy coordination of EVA-MARL
