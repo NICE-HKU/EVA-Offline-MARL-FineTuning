@@ -106,6 +106,22 @@ python run_madt_sc2.py --map_name 3s5z --cuda_id 0
   <img src="./source/abla-finecoarse-grained.png" width="800" alt="EVA-MARL Performance">
 </p>
 
+---
+
+## 👉  Computational Overhead Discussion
+
+EVAFormer introduces **additional computational overhead during training** due to evolutionary optimization (EO), which performs iterative latent candidate evaluation to refine token representations. This overhead is **intentional, explainable, and confined to the training stage**: EO is executed only when `self.training == True` and is completely disabled during deployment and inference.
+
+From a theoretical perspective, the added training cost scales with the number of evolutionary evaluations, i.e., approximately proportional to `(G + 1) × M`, where `M` is the population size and `G` is the number of generations. In contrast, the inference path of EVAFormer uses a single-pass eVAE token mixer without token-to-token interactions, avoiding the quadratic `O(T²)` attention cost and achieving **linear-in-`T` inference complexity**.
+
+Empirically, this design leads to a clear separation between training and deployment behavior. End-to-end measurements on SMAC show that EVAFormer’s wall-clock training time remains **comparable to MADT** under realistic MARL pipelines, with differences typically within a small margin per 1M environment steps. Isolated latency benchmarks further confirm that, while EO significantly increases token-mixer latency during training, the **inference-time latency of EVAFormer is on par with standard MHSA**, and in some cases slightly lower.
+
+Importantly, the training-time overhead is **controllable in practice** through explicit hyperparameters (e.g., population size, number of generations), early stopping, or selective/less frequent application of EO, without affecting the deployment path. As a result, EVAFormer trades higher—but bounded—training cost for efficient inference and improved long-horizon performance, making it suitable for offline-to-online MARL settings with long contexts.
+
+For a detailed complexity analysis, code-level explanations, and full timing benchmarks, please refer to
+👉 **[README-computationaloverhead.md](https://github.com/NICE-HKU/EVA-Offline-MARL-FineTuning/blob/main/README-computationaloverhead.md)**
+
+
 ## 🛠️ Customization
 Modify `sc2/models/gpt_model.py` to:
 - Adjust evolutionary VAE architectures
